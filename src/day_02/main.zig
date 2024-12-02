@@ -72,12 +72,6 @@ pub fn main() !void {
     const file = @embedFile("input.txt");
     var lines = std.mem.tokenizeScalar(u8, file, '\n');
 
-    var line_count: usize = 0;
-    while (lines.next()) |_| {
-        line_count += 1;
-    }
-    lines.reset();
-
     var part1: u64 = 0;
     var part2: u64 = 0;
     while (lines.next()) |line| {
